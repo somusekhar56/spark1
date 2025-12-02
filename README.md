@@ -56,11 +56,17 @@ Easy to add nodes and grow cluster size.
 # Modern Hadoop Ecosystem
 Hadoop is not just HDFS + MapReduce anymore.
 It includes tools like:
+
 Hive → SQL on Hadoop
+
 Pig → Scripting
+
 Spark → Fast in-memory processing
+
 HBase → NoSQL database
+
 Sqoop / Flume → Data ingestion
+
 Oozie → Workflow scheduling
 
 # 2. Spark Introduction
