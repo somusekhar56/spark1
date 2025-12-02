@@ -63,5 +63,29 @@ HBase → NoSQL database
 Sqoop / Flume → Data ingestion
 Oozie → Workflow scheduling
 
+# 2. Spark Introduction
+Apache Spark is an open-source, fast, in-memory data processing engine used for big data processing and analytics.
+
+# 2.1 Key Features / Advantages of Apache Spark 
+1. In-Memory Processing (Very Fast)  -  Spark stores data in memory (RAM), making processing 100x faster than Hadoop MapReduce.
+2. Supports Multiple Workloads - Batch processing, Real-time streaming (Spark Streaming), Machine learning (MLlib),Graph processing (GraphX),SQL queries (Spark SQL)
+3.  Easy to Use - Spark provides simple APIs in Python, Scala, Java, R. PySpark is especially popular for data engineering.
+4.  Fault Tolerant - Uses RDD (Resilient Distributed Dataset) which provides fault tolerance using lineage information.
+5.  Works with Hadoop - Spark can run on top of:  HDFS,YARN,Hadoop clusters,Standalone cluster,Cloud (AWS, Azure, GCP)
+6.  Lazy Evaluation - Execution happens only when required → improves performance.
+7.  Distributed Computing - Spark automatically distributes data and computation across multiple nodes in a cluster.
+   
+#   2.2 Comparison: Apache Spark vs Hadoop MapReduce
+| Feature             | Apache Spark                | Hadoop MapReduce       |
+| ------------------- | --------------------------- | ---------------------- |
+| **Speed**           | Very fast (in-memory)       | Slow (disk-based)      |
+| **Processing**      | Real-time + batch           | Only batch             |
+| **Data Storage**    | Uses RAM                    | Uses disk (HDFS)       |
+| **Ease of Use**     | Easy (APIs in Python/Scala) | Harder, verbose code   |
+| **Use Cases**       | Streaming, ML, SQL, graphs  | Simple batch jobs      |
+| **Fault Tolerance** | RDD lineage                 | Replication in HDFS    |
+| **Performance**     | 10–100x faster              | Slower due to disk I/O |
+
+
 
 
