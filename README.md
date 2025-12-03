@@ -125,6 +125,7 @@ Nodes that run executors
 
 # 5 RDD (Resilient Distributed Dataset)
 Fundamental data structure in Spark
+
 Immutable, distributed data collection
 
 # Driver program in DAG
