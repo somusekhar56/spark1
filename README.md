@@ -92,6 +92,35 @@ Apache Spark is an open-source, fast, in-memory data processing engine used for 
 | **Fault Tolerance** | RDD lineage                 | Replication in HDFS    |
 | **Performance**     | 10–100x faster              | Slower due to disk I/O |
 
+# 3. Spark Architecture Overview
+
+Apache Spark follows a master–slave cluster architecture that distributes data and computation across multiple machines.
+Spark’s architecture is designed for high-speed, in-memory processing and supports various workloads like SQL, ML, streaming, and graphs.
+
+# 3.1 Key Components of Spark Architecture
+Key Components of Spark Architecture Spark follows a master-slave distributed architecture with the following components:
+
+#1 Driver Program
+The driver is the starting point of a Spark application.
+It runs the user code (your Python/Scala program).
+Converts code into tasks
+Sends tasks to executors
+
+# 2. Cluster Manager
+It manages the resources of the cluster. Spark supports:
+* Standalone Cluster Manager
+* YARN (Hadoop)
+* Mesos
+* Kubernetes
+Cluster Manager allocates executors to the driver program.
+
+# 3. Executors
+* Executors are worker processes running on cluster nodes.
+* Execute tasks assigned by the driver
+* Store data in memory for caching
+* Send results back to the driver
+
+
 
 
 
