@@ -100,7 +100,7 @@ Spark’s architecture is designed for high-speed, in-memory processing and supp
 # 3.1 Key Components of Spark Architecture
 Key Components of Spark Architecture Spark follows a master-slave distributed architecture with the following components:
 
-#1 Driver Program
+# 1 Driver Program
 The driver is the starting point of a Spark application.
 It runs the user code (your Python/Scala program).
 Converts code into tasks
@@ -120,7 +120,97 @@ Cluster Manager allocates executors to the driver program.
 * Store data in memory for caching
 * Send results back to the driver
 
+ #  4 Workers
+Nodes that run executors
 
+# 5 RDD (Resilient Distributed Dataset)
+Fundamental data structure in Spark
+Immutable, distributed data collection
+
+# Driver program in DAG
+# 1. DAG (Directed Acyclic Graph)
+Spark converts your code into a logical execution plan (DAG).
+This DAG is optimized into stages.
+# 2.DAG Scheduler
+Converts DAG into stages
+Creates tasks for each stage
+
+# 3.2 Interaction Between Components During Execution
+Here is the step-by-step workflow of how Spark components interact during code execution.
+
+# Submit Application
+* User submits Spark code
+* Driver begins execution
+
+# Driver Program Starts
+Creates and start SparkSession,SparkContext
+Communicates with Cluster Manager
+
+# Driver converts your code → DAG
+Logical plan → optimized plan → DAG of stages.
+
+# Driver requests executors from Cluster Manager
+Cluster Manager allocates:
+* CPU cores
+* Memory
+* Executors on worker nodes
+  
+ # Driver sends tasks to Executors
+Tasks correspond to partitions of the data.
+
+# Executors run the tasks
+Executors:
+Read data
+Perform computation (map, reduce, filter, join)
+Store intermediate results in memory
+Use caching if required
+
+# Executors return results
+Executors send results back to the driver.
+If it is an action like:
+count()
+collect()
+show()
+The driver displays the output.
+
+# Executors continue until the job ends
+When the job finishes:
+Executors shut down
+Resources are released
+
+# Spark Components
+#  Driver
+Driver is the master process in Spark. It creates the SparkContext, builds the job execution plan, and coordinates all the worker nodes.
+
+# Key responsibilities of Driver:
+Runs the main() function of the application.
+Creates the SparkContext / SparkSession.
+Builds the DAG (Directed Acyclic Graph).
+Divides the job into stages and tasks.
+Communicates with the cluster manager.
+Collects results after execution.
+
+# Executors
+Executors are worker processes that run tasks and store data. They perform the actual computations in Spark
+
+# Each executor:
+Executes tasks sent by the driver.
+Stores data in memory (for caching in RDD/DataFrame).
+Reports the status back to the driver.
+
+# Responsibilities:
+Runs tasks in parallel.
+Holds RDD/DataFrame partition data.
+Performs calculations, shuffling, and data storage.
+Provides fault tolerance by recomputing lost partitions.
+
+# Cluster Manager
+Cluster Manager allocates resources and starts Executors and managing nodes in the cluster.Spark supports Standalone, YARN, Mesos, and Kubernetes as cluster managers.
+
+# Responsibilities:
+Allocates CPU and memory to executors.
+Launches executors on worker nodes.
+Monitors executors and nodes.
 
 
 
