@@ -227,8 +227,11 @@ High Availability ensures that if the master component (cluster manager) goes do
 
 Cluster Managers that support HA:
 YARN – ResourceManager HA
+
 Standalone Mode – Master HA
+
 Mesos – Master HA
+
 Kubernetes – Control plane HA
 
 # 5. Core Concepts in Apache Spark
