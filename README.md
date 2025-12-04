@@ -213,7 +213,7 @@ Allocates CPU and memory to executors.
 Launches executors on worker nodes.
 Monitors executors and nodes.
 
-# Difference between all three failures (Driver vs Executor vs Cluster Manager)
+# Difference between all three failures (Driver vs Executor vs Cluster Manager)(important for interview)
 # Driver Failure
 If the driver fails, the entire Spark application fails. Since the driver manages the DAG, task scheduling, and coordinates all executors, Spark cannot continue execution. The job must be restarted.
 
@@ -230,5 +230,90 @@ YARN – ResourceManager HA
 Standalone Mode – Master HA
 Mesos – Master HA
 Kubernetes – Control plane HA
+
+# 5. Core Concepts in Apache Spark
+
+# 5.1 RDD (Resilient Distributed Dataset)
+
+RDD is the fundamental data structure of Spark.Immutable, distributed data collection.Fault-tolerant distributed data structure
+
+# Key Features
+* Resilient → Automatically recovers from failures
+* Distributed → Data is split across multiple cluster nodes
+* Immutable → Once created, it cannot be changed
+* Lazy Evaluation → Execution happens only when an action is performed
+* In-memory processing → Fast data computation
+
+# Used for
+Unstructured data
+Complex transformations
+Low-level operations
+Fault-tolerant processing
+
+# 5.2 Spark Core
+Spark Core is the foundation layer of the entire Spark architecture.
+# It provides:
+Memory management
+Fault tolerance
+Task scheduling
+RDD operations
+Communication with cluster manager
+
+# Why Spark Core is important
+All other modules (SQL, Streaming, MLlib, GraphX) are built on top of Spark Core.
+
+# 5.3 Spark SQL
+Spark SQL is the module for structured and semi-structured data.
+# Supports:
+SQL queries
+DataFrames
+Datasets
+Hive integration
+# Advantages
+Easy to write SQL-like queries
+Optimized by Catalyst Optimizer
+Fast execution using Tungsten engine
+Works with multiple data sources (Hive, Parquet, JSON, CSV, etc.)
+
+# 5.4 Spark Streaming
+Spark Streaming provides real-time data processing.
+# How it works
+Data is divided into small time intervals called micro-batches.
+# Use cases
+Streaming logs
+IoT sensor data
+Real-time dashboards
+Fraud detection
+# Types:
+DStreams (Older API)
+Structured Streaming (Newer, faster, recommended)
+
+# 5.5 MLlib (Machine Learning Library)
+MLlib is Spark's built-in machine learning library.
+# Provides algorithms for:
+Classification
+Regression
+Clustering
+Recommendation
+Dimensionality reduction
+# Also includes:
+Feature extraction
+Pipelines
+Model evaluation
+# Why MLlib?
+Distributed ML processing
+Very fast on large datasets
+Scales horizontally across cluster
+
+# 5.6 GraphX
+GraphX is used for graph processing and graph-parallel computations.
+#  Used for:
+Social network analysis
+PageRank
+Graph traversal
+Link analysis
+# Features
+Use RDDs to represent graphs
+Comes with optimized graph operators
 
 
