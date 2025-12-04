@@ -300,8 +300,16 @@ Fast execution using Tungsten engine
 
 Works with multiple data sources (Hive, Parquet, JSON, CSV, etc.)
 
+# What is the Catalyst Optimizer?
+A query optimization engine in Spark SQL that automatically:
+Optimizes logical plans
+Optimizes physical plans
+Applies rule-based transformations
+Improves performance
+
 # 5.4 Spark Streaming
 Spark Streaming provides real-time data processing.
+Example sources:Kafka,Flume,Socket,Files
 # How it works
 Data is divided into small time intervals called micro-batches.
 # Use cases
