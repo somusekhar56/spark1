@@ -257,6 +257,14 @@ Low-level operations
 
 Fault-tolerant processing
 
+# What are the two types of RDD operations?
+1 Transformations → return new RDD
+Example: map, filter, flatMap, reduceByKey
+
+2 Actions → return result
+Example: collect, count, take, saveAsTextFile
+
+
 # 5.2 Spark Core
 Spark Core is the foundation layer of the entire Spark architecture.
 # It provides:
