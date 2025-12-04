@@ -235,7 +235,7 @@ Kubernetes – Control plane HA
 
 # 5.1 RDD (Resilient Distributed Dataset)
 
-RDD is the fundamental data structure of Spark.Immutable, distributed data collection.Fault-tolerant distributed data structure
+RDD is the fundamental data structure of Spark.Immutable,(once created object we cant change) distributed data collection.Fault-tolerant distributed data structure
 
 # Key Features
 * Resilient → Automatically recovers from failures
@@ -249,7 +249,7 @@ RDD is the fundamental data structure of Spark.Immutable, distributed data colle
 * In-memory processing → Fast data computation
 
 # Used for
-Unstructured data
+Unstructured data(no schema)
 
 Complex transformations
 
