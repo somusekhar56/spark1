@@ -213,5 +213,22 @@ Allocates CPU and memory to executors.
 Launches executors on worker nodes.
 Monitors executors and nodes.
 
+# Difference between all three failures (Driver vs Executor vs Cluster Manager)
+# Driver Failure
+If the driver fails, the entire Spark application fails. Since the driver manages the DAG, task scheduling, and coordinates all executors, Spark cannot continue execution. The job must be restarted.
+
+# Executor Failure
+If an executor fails, Spark detects it and the cluster manager launches a new executor. The tasks running on that executor are rescheduled and re-executed on other executors. The job continues normally due to Spark’s fault tolerance and lineage.
+
+# Culster manager failure
+If the cluster manager fails, the impact depends on HA. With High Availability, a standby cluster manager takes over and the job continues normally. Without HA, the cluster cannot allocate new resources, no new executors can start, and running jobs may eventually fail.
+
+High Availability ensures that if the master component (cluster manager) goes down, a standby master immediately takes over so the Spark application and cluster continue to run smoothly.
+
+Cluster Managers that support HA:
+YARN – ResourceManager HA
+Standalone Mode – Master HA
+Mesos – Master HA
+Kubernetes – Control plane HA
 
 
