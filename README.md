@@ -364,4 +364,20 @@ Use RDDs to represent graphs
 
 Comes with optimized graph operators
 
+# 6. RDD, Dataframe, Dataset [Difference and Converting from one to Another]: 
+
+# 6.1 Differences Between RDD, Dataframe, and Dataset: Understanding the distinctions between these abstractions. 
+
+# DataFrame
+DataFrame is a distributed table with schema, optimized by Catalyst. It is faster and preferred for structured data.
+# Use DataFrame when:
+* You want performance
+* You want SQL-like processing
+
+# Dataset (Scala & Java only)
+Dataset combines the advantages of RDD (type safety) and DataFrame (optimization). Available only in Scala/Java.
+# Performance Ranking:
+DataFrame ≈ Dataset > RDD
+
+
 
