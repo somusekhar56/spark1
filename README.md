@@ -382,5 +382,23 @@ Dataset combines the advantages of RDD (type safety) and DataFrame (optimization
 # Performance Ranking:
 DataFrame ≈ Dataset > RDD
 
+# Converting between RDD, Dataframe, and Dataset: Techniques for converting data structures.
+# Create RDD
+<img width="1027" height="621" alt="image" src="https://github.com/user-attachments/assets/b899f310-27b1-4c75-bd99-f613eceeba1f" />
+
+
+# converts  RDD to dataframe
+<img width="885" height="623" alt="image" src="https://github.com/user-attachments/assets/2c23f4b5-7883-4fdb-9bf8-854d663b9985" />
+
+# create data frame
+<img width="1099" height="604" alt="image" src="https://github.com/user-attachments/assets/aa19dc4c-7c3d-4c4a-b35d-91683a510be1" />
+
+# converts dataframe to RDD
+<img width="838" height="633" alt="image" src="https://github.com/user-attachments/assets/24182970-88e1-4af3-9881-4c7dd92d6090" />
+
+
+
+
+
 
 
