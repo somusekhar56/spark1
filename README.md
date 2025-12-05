@@ -396,6 +396,25 @@ DataFrame ≈ Dataset > RDD
 # converts dataframe to RDD
 <img width="1075" height="642" alt="image" src="https://github.com/user-attachments/assets/7df4cfc7-d9a3-416b-b429-fc041348123d" />
 
+# Transformations:
+Transformations are operations that produce a new RDD / DataFrame / Dataset from an existing one. They are lazy (Spark builds a logical plan / DAG but won’t execute until an action is called). Transformations are how you modify or prepare data before an action (like collect(), count(), save()).
+
+# Narrow Transformations:
+Narrow transformation is one where each output partition depends only on a single input partition. No data needs to be redistributed across the network between partitions — Spark can compute tasks using only local data. Narrow transformations do not cause a shuffle.
+
+No data shuffle
+
+# Examples
+map, filter, flatMap, mapPartitions, sample, union
+# Wide Transformations:
+Wide transformation is one where the output partition depends on data from multiple input partitions — Spark must shuffle data across the network to reorganize it. Wide transformations create shuffle boundaries and separate stages in the DAG.
+
+# Examples
+*reduceByKey, groupByKey, groupBy, aggregateByKey,join, cogroup, distinct, repartition, sortByKey, orderBy (DataFrames), groupBy().
+
+# Shuffling in Spark:
+Shuffle is a redistributing data across the network so that records with the same key (or partitioning) end up together.
+
 
 
 
