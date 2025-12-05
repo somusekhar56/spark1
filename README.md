@@ -394,7 +394,8 @@ DataFrame ≈ Dataset > RDD
 <img width="1099" height="604" alt="image" src="https://github.com/user-attachments/assets/aa19dc4c-7c3d-4c4a-b35d-91683a510be1" />
 
 # converts dataframe to RDD
-<img width="838" height="633" alt="image" src="https://github.com/user-attachments/assets/24182970-88e1-4af3-9881-4c7dd92d6090" />
+<img width="1075" height="642" alt="image" src="https://github.com/user-attachments/assets/7df4cfc7-d9a3-416b-b429-fc041348123d" />
+
 
 
 
